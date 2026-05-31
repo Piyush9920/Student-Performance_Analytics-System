@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <style>
+
+        body{
+
+            font-family:Arial;
+            background:#0f172a;
+            color:white;
+            padding:40px;
+
+        }
+
+        .card{
+
+            width:500px;
+            margin:auto;
+            background:white;
+            color:black;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0px 0px 20px rgba(0,0,0,0.3);
+
+        }
+
+        img{
+
+            width:160px;
+            height:160px;
+            border-radius:50%;
+            object-fit:cover;
+            border:5px solid #2563eb;
+            margin-bottom:20px;
+
+        }
+
+        h1{
+
+            color:#2563eb;
+            margin-bottom:20px;
+
+        }
+
+        p{
+
+            font-size:20px;
+            margin-top:15px;
+
+        }
+
+        .pass{
+
+            color:green;
+            font-weight:bold;
+
+        }
+
+        .fail{
+
+            color:red;
+            font-weight:bold;
+
+        }
+
+        .grade{
+
+            font-size:25px;
+            font-weight:bold;
+            color:#2563eb;
+
+        }
+
+        a{
+
+            display:block;
+            margin-top:30px;
+            background:#2563eb;
+            color:white;
+            text-decoration:none;
+            padding:14px;
+            border-radius:10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <img
+            src="/static/uploads/{{ student[5] }}"
+        >
+
+        <h1>
+
+            {{ student[1] }}
+
+        </h1>
+
+        <p>
+
+            Roll Number :
+            {{ student[2] }}
+
+        </p>
+
+        <p>
+
+            Course :
+            {{ student[3] }}
+
+        </p>
+
+        <p>
+
+            Marks :
+            {{ student[4] }}
+
+        </p>
+
+        <p class="grade">
+
+            Grade :
+
+            {% if student[4] >= 90 %}
+
+                A+
+
+            {% elif student[4] >= 75 %}
+
+                A
+
+            {% elif student[4] >= 60 %}
+
+                B
+
+            {% elif student[4] >= 40 %}
+
+                C
+
+            {% else %}
+
+                FAIL
+
+            {% endif %}
+
+        </p>
+
+        <p>
+
+            Status :
+
+            {% if student[4] >= 40 %}
+
+                <span class="pass">
+
+                    PASS
+
+                </span>
+
+            {% else %}
+
+                <span class="fail">
+
+                    FAIL
+
+                </span>
+
+            {% endif %}
+
+        </p>
+
+        <a href="/students">
+
+            Back To Students
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

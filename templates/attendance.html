@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance System</title>
+
+    <style>
+
+        body{
+
+            font-family:Arial;
+            background:#0f172a;
+            color:white;
+            padding:40px;
+
+        }
+
+        .container{
+
+            width:500px;
+            margin:auto;
+            background:white;
+            color:black;
+            padding:40px;
+            border-radius:15px;
+
+        }
+
+        h1{
+
+            text-align:center;
+            color:#2563eb;
+            margin-bottom:30px;
+
+        }
+
+        input, select{
+
+            width:100%;
+            padding:14px;
+            margin-top:10px;
+            margin-bottom:20px;
+            border-radius:8px;
+            border:1px solid gray;
+            font-size:16px;
+
+        }
+
+        button{
+
+            width:100%;
+            padding:15px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:17px;
+            cursor:pointer;
+
+        }
+
+        .msg{
+
+            margin-top:25px;
+            background:#f1f5f9;
+            padding:20px;
+            border-radius:10px;
+
+        }
+
+        .back-btn{
+
+            display:block;
+            text-align:center;
+            margin-top:20px;
+            text-decoration:none;
+            background:#2563eb;
+            color:white;
+            padding:12px;
+            border-radius:10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Attendance</h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter Student Name"
+                required
+            >
+
+            <select name="status" required>
+
+                <option value="">
+                    Select Attendance
+                </option>
+
+                <option value="Present">
+                    Present
+                </option>
+
+                <option value="Absent">
+                    Absent
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Submit Attendance
+            </button>
+
+        </form>
+
+        {% if message %}
+
+        <div class="msg">
+
+            <h2>{{ message }}</h2>
+
+        </div>
+
+        {% endif %}
+
+        <a href="/home" class="back-btn">
+            Back To Home
+        </a>
+
+    </div>
+
+</body>
+
+</html>

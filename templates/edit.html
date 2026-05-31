@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#0f172a;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:500px;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+        }
+
+        h1{
+            text-align:center;
+            color:#2563eb;
+            margin-bottom:30px;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+        }
+
+        input{
+            padding:15px;
+            border:1px solid gray;
+            border-radius:10px;
+            font-size:16px;
+        }
+
+        button{
+            padding:15px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Edit Student</h1>
+
+        <form action="/update/{{ student[0] }}"
+              method="POST">
+
+            <input type="text"
+                   name="name"
+                   value="{{ student[1] }}"
+                   required>
+
+            <input type="number"
+                   name="roll"
+                   value="{{ student[2] }}"
+                   required>
+
+            <input type="text"
+                   name="course"
+                   value="{{ student[3] }}"
+                   required>
+
+            <input type="number"
+                   name="marks"
+                   value="{{ student[4] }}"
+                   required>
+                   <br><br>
+
+<input
+    type="number"
+    name="ai"
+    placeholder="AI Marks"
+>
+
+<br><br>
+
+<input
+    type="number"
+    name="ml"
+    placeholder="ML Marks"
+>
+
+<br><br>
+
+<input
+    type="number"
+    name="dsa"
+    placeholder="DSA Marks"
+>
+
+<br><br>
+
+<input
+    type="number"
+    name="python"
+    placeholder="Python Marks"
+>
+
+<br><br>
+
+<input
+    type="number"
+    name="algorithm"
+    placeholder="Algorithm Marks"
+>
+                   
+
+            <button type="submit">
+                Update Student
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

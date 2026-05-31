@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics Dashboard</title>
+
+    <style>
+
+        body{
+
+            margin:0;
+            padding:30px;
+            font-family:Arial;
+            background:#0f172a;
+            color:white;
+
+        }
+
+        h1{
+
+            text-align:center;
+            margin-bottom:40px;
+
+        }
+
+        .container{
+
+            width:1100px;
+            margin:auto;
+
+        }
+
+        .cards{
+
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:30px;
+            margin-bottom:40px;
+
+        }
+
+        .card{
+
+            background:white;
+            color:black;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+
+        }
+
+        .card h2{
+
+            margin-bottom:15px;
+            color:#2563eb;
+
+        }
+
+        .card p{
+
+            font-size:35px;
+            font-weight:bold;
+
+        }
+
+        .chart-box{
+
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            margin-top:40px;
+            text-align:center;
+
+        }
+
+        .chart-box h2{
+
+            color:#2563eb;
+            margin-bottom:20px;
+
+        }
+
+        img{
+
+            width:100%;
+            max-width:900px;
+            border-radius:10px;
+
+        }
+
+        .btn{
+
+            display:block;
+            width:250px;
+            margin:40px auto;
+            text-align:center;
+            text-decoration:none;
+            background:#2563eb;
+            color:white;
+            padding:15px;
+            border-radius:10px;
+            font-size:18px;
+
+        }
+
+        .topper{
+
+            background:gold;
+            color:black;
+            padding:20px;
+            border-radius:15px;
+            text-align:center;
+            margin-bottom:40px;
+
+        }
+
+        .topper h2{
+
+            margin-bottom:10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Analytics Dashboard</h1>
+
+        <div class="topper">
+
+            <h2>Topper Student</h2>
+
+            <h1>
+                {{ topper_name }}
+            </h1>
+
+            <p>
+                Marks : {{ topper_marks }}
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h2>Total Students</h2>
+
+                <p>
+                    {{ total_students }}
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Average Marks</h2>
+
+                <p>
+                    {{ average_marks }}
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Highest Marks</h2>
+
+                <p>
+                    {{ highest_marks }}
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>Lowest Marks</h2>
+
+                <p>
+                    {{ lowest_marks }}
+                </p>
+
+            </div>
+
+        </div>
+
+       
+
+        <a href="/students" class="btn">
+
+            Back To Students
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

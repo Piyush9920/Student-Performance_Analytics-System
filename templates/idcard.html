@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student ID Card</title>
+
+    <style>
+
+        body{
+
+            background:#0f172a;
+            font-family:Arial;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+
+        }
+
+        .card{
+
+            width:350px;
+            background:white;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 0 20px rgba(0,0,0,0.4);
+
+        }
+
+        .top{
+
+            background:#2563eb;
+            color:white;
+            text-align:center;
+            padding:20px;
+
+        }
+
+        .top h1{
+
+            margin:0;
+
+        }
+
+        .photo{
+
+            text-align:center;
+            margin-top:20px;
+
+        }
+
+        .photo img{
+
+            width:130px;
+            height:130px;
+            border-radius:50%;
+            object-fit:cover;
+            border:5px solid #2563eb;
+
+        }
+
+        .details{
+
+            padding:25px;
+
+        }
+
+        .details h2{
+
+            margin-top:15px;
+            color:#111827;
+
+        }
+
+        .bottom{
+
+            background:#2563eb;
+            color:white;
+            text-align:center;
+            padding:15px;
+
+        }
+
+        .btn{
+
+            display:block;
+            width:200px;
+            margin:20px auto;
+            text-align:center;
+            background:#2563eb;
+            color:white;
+            padding:12px;
+            border-radius:10px;
+            text-decoration:none;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <div class="card">
+
+            <div class="top">
+
+                <h1>
+
+                    STUDENT ID CARD
+
+                </h1>
+
+            </div>
+
+            <div class="photo">
+
+                <img
+                    src="/static/uploads/{{ student[5] }}"
+                >
+
+            </div>
+
+            <div class="details">
+
+                <h2>
+
+                    Name :
+                    {{ student[1] }}
+
+                </h2>
+
+                <h2>
+
+                    Roll :
+                    {{ student[2] }}
+
+                </h2>
+
+                <h2>
+
+                    Course :
+                    {{ student[3] }}
+
+                </h2>
+
+                <h2>
+
+                    Marks :
+                    {{ student[4] }}
+
+                </h2>
+
+            </div>
+
+            <div class="bottom">
+
+                Student Performance Analytics
+
+            </div>
+
+        </div>
+
+        <a
+            href="/students"
+            class="btn"
+        >
+
+            Back to Students
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

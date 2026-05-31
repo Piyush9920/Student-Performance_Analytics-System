@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>QR Code</title>
+
+    <style>
+
+        body{
+
+            background:#0f172a;
+            color:white;
+            font-family:Arial;
+            text-align:center;
+            padding:50px;
+
+        }
+
+        .box{
+
+            background:white;
+            color:black;
+            width:400px;
+            margin:auto;
+            padding:40px;
+            border-radius:20px;
+
+        }
+
+        img{
+
+            width:250px;
+            margin-top:20px;
+
+        }
+
+        a{
+
+            display:block;
+            margin-top:30px;
+            background:#2563eb;
+            color:white;
+            padding:14px;
+            text-decoration:none;
+            border-radius:10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>
+
+            Student QR Code
+
+        </h1>
+
+        <img
+            src="/static/qrcodes/{{ filename }}"
+        >
+
+        <a href="/students">
+
+            Back To Students
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

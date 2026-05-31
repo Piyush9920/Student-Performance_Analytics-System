@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Students Data</title>
+
+    <style>
+
+        body{
+
+            font-family:Arial;
+            background:#0f172a;
+            padding:40px;
+            color:white;
+
+        }
+
+        h1{
+
+            text-align:center;
+            margin-bottom:20px;
+
+        }
+
+        .top-buttons{
+
+            margin-bottom:20px;
+            text-align:center;
+
+        }
+
+        .top-buttons a{
+
+            text-decoration:none;
+            color:white;
+            padding:12px 20px;
+            border-radius:10px;
+            margin-right:10px;
+            display:inline-block;
+
+        }
+
+        .analytics-btn{
+
+            background:#2563eb;
+
+        }
+
+        .export-btn{
+
+            background:green;
+
+        }
+
+        .ranking-btn{
+
+            background:orange;
+
+        }
+
+        .search-box{
+
+            text-align:center;
+            margin-bottom:20px;
+
+        }
+
+        .search-box input{
+
+            padding:12px;
+            width:300px;
+            border:none;
+            border-radius:10px;
+
+        }
+
+        .search-box button{
+
+            padding:12px 20px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+
+        }
+
+        table{
+
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            color:black;
+
+        }
+
+        th{
+
+            background:#2563eb;
+            color:white;
+            padding:15px;
+
+        }
+
+        td{
+
+            padding:12px;
+            text-align:center;
+            border-bottom:1px solid gray;
+
+        }
+
+        img{
+
+            width:70px;
+            height:70px;
+            border-radius:50%;
+            object-fit:cover;
+
+        }
+
+        .view-btn{
+
+            background:#2563eb;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            text-decoration:none;
+
+        }
+
+        .id-btn{
+
+            background:orange;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            text-decoration:none;
+
+        }
+
+        .qr-btn{
+
+            background:black;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            text-decoration:none;
+
+        }
+
+        .report-btn{
+
+            background:purple;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            text-decoration:none;
+
+        }
+
+        .edit-btn{
+
+            background:green;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            text-decoration:none;
+
+        }
+
+        .delete-btn{
+
+            background:red;
+            color:white;
+            padding:8px 15px;
+            border-radius:5px;
+            text-decoration:none;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>All Students Data</h1>
+
+    <div class="top-buttons">
+
+        <a
+            href="/analytics"
+            class="analytics-btn"
+        >
+
+            Analytics Dashboard
+
+        </a>
+
+        <a
+            href="/export"
+            class="export-btn"
+        >
+
+            Export CSV
+
+        </a>
+
+        <a
+            href="/ranking"
+            class="ranking-btn"
+        >
+
+            Student Ranking
+
+        </a>
+
+    </div>
+
+    <form
+        action="/students"
+        method="GET"
+        class="search-box"
+    >
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search by Name or Roll"
+        >
+
+        <button type="submit">
+
+            Search
+
+        </button>
+
+    </form>
+
+    <table>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Roll</th>
+            <th>Course</th>
+            <th>Marks</th>
+            <th>Actions</th>
+
+        </tr>
+
+        {% for student in students %}
+
+        <tr>
+
+            <td>{{ student[0] }}</td>
+
+           <td>
+
+    {% if student[10] %}
+
+    <img
+        src="{{ url_for('static', filename='uploads/' + student[10]) }}"
+    >
+
+    {% else %}
+
+    No Photo
+
+    {% endif %}
+
+</td>
+
+            <td>{{ student[1] }}</td>
+
+            <td>{{ student[2] }}</td>
+
+            <td>{{ student[3] }}</td>
+
+            <td>{{ student[4] }}</td>
+
+            <td>
+
+                <a
+                    href="/profile/{{ student[0] }}"
+                    class="view-btn"
+                >
+                    View
+                </a>
+
+                <a
+                    href="/idcard/{{ student[0] }}"
+                    class="id-btn"
+                >
+                    ID Card
+                </a>
+
+                <a
+                    href="/qrcode/{{ student[0] }}"
+                    class="qr-btn"
+                >
+                    QR Code
+                </a>
+
+                <a
+                    href="/report/{{ student[0] }}"
+                    class="report-btn"
+                >
+                    Report
+                </a>
+
+                <a
+                    href="/edit/{{ student[0] }}"
+                    class="edit-btn"
+                >
+                    Edit
+                </a>
+
+                <a
+                    href="/delete/{{ student[0] }}"
+                    class="delete-btn"
+                >
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>

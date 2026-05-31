@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Chatbot</title>
+
+    <style>
+
+        body{
+
+            font-family:Arial;
+            background:#0f172a;
+            color:white;
+            text-align:center;
+            padding:50px;
+
+        }
+
+        .box{
+
+            width:600px;
+            margin:auto;
+            background:white;
+            color:black;
+            padding:40px;
+            border-radius:15px;
+
+        }
+
+        h1{
+
+            color:#2563eb;
+            margin-bottom:20px;
+
+        }
+
+        input{
+
+            width:80%;
+            padding:12px;
+            border:1px solid gray;
+            border-radius:10px;
+            margin-bottom:15px;
+
+        }
+
+        button{
+
+            padding:12px 25px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+
+        }
+
+        .answer{
+
+            margin-top:30px;
+            padding:20px;
+            background:#f1f5f9;
+            border-radius:10px;
+            font-size:18px;
+
+        }
+
+        a{
+
+            display:inline-block;
+            margin-top:25px;
+            text-decoration:none;
+            background:green;
+            color:white;
+            padding:12px 25px;
+            border-radius:10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>AI Student Assistant</h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="question"
+                placeholder="Ask me anything..."
+                required
+            >
+
+            <br>
+
+            <button type="submit">
+
+                Ask AI
+
+            </button>
+
+        </form>
+
+        {% if answer %}
+
+        <div class="answer">
+
+            {{ answer }}
+
+        </div>
+
+        {% endif %}
+
+        <a href="/home">
+
+            Back To Dashboard
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
